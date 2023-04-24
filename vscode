@@ -10,3 +10,4 @@ alt + shift + c 注释所有 console.log
 alt + shift + u 启用所有 console.log
 
 alt + shift + d 删除所有 console.log
+better-comments

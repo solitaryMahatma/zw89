@@ -6,8 +6,9 @@ const checkFile = (file:any, types = '.exe,.pdf', max = 10*1024*1024) =>{
     const fileTypes = types.split(',').map((v:string)=>v.toLowerCase())
     if (fileTypes.includes(fileType)) {
       if (fileSize>max) {
-        const aS= max/1024/1024 + 'MB'
-        return Promise.reject({msgCn:`文件(${fileName})太大，超过${aS}`, msg: `The file(${fileName}) is too large, exceeding ${aS}`, type: 1})
+        const aS= (max/1024/1024).toFixed(3) + 'MB'
+        const bS= (fileSize/1024/1024).toFixed(3) + 'MB'
+        return Promise.reject({msgCn:`文件(${fileName}容量${bS})太大，超过${aS}`, msg: `The file(${fileName} capacity ${bS}) is too large, exceeding ${aS}`, type: 1})
       } else {
         return Promise.resolve({msgCn:`文件(${fileName})可以上传`,msg:`File(${fileName}) can be uploaded`, type: 2})
       }

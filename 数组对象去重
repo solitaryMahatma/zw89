@@ -2,7 +2,6 @@ const removalArrayObj =(tar:object[]=[],mar:object[]=[], key:string='id'):object
   const aL:object[] = [...tar,...mar]
   const map = new Map()
   return aL.filter((v:any)=>!map.has(v[key])&& map.set(v[key], 1))
-
 }
 const removeKLArrayObjVal = (tar:object[]=[],mar:object[]=[],key:string='id'):object[]=>{
   const aL:[string|number,object[]][] = [...tar,...mar].map((v:any)=>[v[key],v])

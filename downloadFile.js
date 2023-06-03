@@ -1,5 +1,10 @@
 downloadFile(res.data, '文件名', 'xls')
-
+// 'responseType': 'blob'  //设置响应的数据类型为一个包含二进制数据的 Blob 对象，必须设置！！！
+/*
+axios.post(apiurl, params, {
+   'responseType': 'blob'  //设置响应的数据类型为一个包含二进制数据的 Blob 对象，必须设置！！！
+})
+*/
 // obj: 数据流 name: 文件名  suffix:文件后缀
 export function downloadFile(obj, name, suffix) {
   let m = (new Date().getMonth() + 1) < 10 ? '0' + (new Date().getMonth() + 1) : (new Date().getMonth() + 1);
